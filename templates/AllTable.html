@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>Respuesta</title>
+
+    <style>
+      body::before{
+        content: "";
+        width: 100%;
+        min-height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(45deg, #52c4df,#ad55c1);
+        opacity: 0.3;
+        z-index: -1;
+      }
+      
+  </style>
+  
+
+
+  </head>
+
+  <body class="container text-center">
+    <h1>Nuestras Imagenes Procesadas</h1>
+    <div class="row">
+    <table class="table table-success table-striped">
+        
+        <tr><th>ID</th><th>Nombre Imagen</th><th>Cantidad de Rostros</th><th>Vista a las Imagenes</th></tr>
+        {% for row in data %}
+        <tr><td>{{ row[0] }}</td><td>{{ row[1] }}</td><td>{{ row[2] }}</td><td><a href="/images?filename={{row[1]}}">ver imagenes</a> </td></td></tr>
+        
+        {% endfor %}
+        </table>
+    
+    </body>   
+
+
+</html>
